@@ -1,0 +1,117 @@
+<style>
+    #div1{
+        width:50px;
+        height:50px;
+        background:red; 
+        margin-bottom:10px;
+    }
+    #div2{
+        width:200px;
+        height:200px;
+        background:black;
+        display:none;
+    }
+</style>
+
+
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+    
+</body>
+<script>
+    window.onload=function()
+    {
+        var div1=document.getElementById("div1");
+        var div2=document.getElementById('div2');
+        var timer=null;
+        div1.onmouseover= function()
+        {
+             div2.style.display='block';
+        };
+ 
+        
+                div1.onmouseout= function()
+                    {
+                        clearTimeout(timer);
+                       timer= setTimeout(function()
+                        {
+                             div2.style.display='none';
+                        }, 500)
+                    };
+            div2.onmouseover=function()
+            {
+                clearTimeout(timer);
+            };
+            div2.onmouseout=function(){
+                 timer=setTimeout(function(){div2.style.display='none';},500);           
+            }
+            
+             
+                     
+    }
+</script>
+
+
+
+
+<html>
+
+<head>
+<title>我的第一个 HTML 页面</title>
+<style>
+    #div1{
+        width:50px;
+        height:50px;
+        background:red; 
+        margin-right:10px;
+        float:left;
+    }
+    #div2{
+        width:200px;
+        height:200px;
+        background:#000;
+        display:none;
+        float:left;
+    }
+</style>
+</head>
+
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+</body>
+<script>
+    window.onload=function()
+    {
+        var oDiv1=document.getElementById("div1");
+        var oDiv2=document.getElementById('div2');
+        var timer=null;
+        oDiv1.onmouseenter= function()
+        {
+            oDiv2.style.display='block';
+        };
+ 
+        
+        oDiv1.onmouseleave= function()
+        {
+            clearTimeout(timer);
+            timer= setTimeout(function(){
+                oDiv2.style.display='none';
+            },500)
+        };
+        oDiv2.onmouseenter=function()
+        {
+            clearTimeout(timer);
+        };
+        oDiv2.onmouseleave=function(){
+            timer=setTimeout(function(){
+                oDiv2.style.display='none';
+            },500)        
+        };
+            
+             
+                     
+    }
+</script>
+</html>
